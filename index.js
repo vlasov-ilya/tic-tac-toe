@@ -46,6 +46,7 @@ document.querySelector('.box').onclick = function() {
     turn++;
   }
 
+
   if(turn%2 != 1){
     chare = "X";
     document.querySelector('span').innerHTML = "X";
@@ -54,17 +55,24 @@ document.querySelector('.box').onclick = function() {
     document.querySelector('span').innerHTML = "O";
   }
 
-  check();
+
 
   play.forEach((c) => {
     if (position[c[0]]===chare && position[c[1]]===chare && position[c[2]]===chare){
-          alert("ЗАЕБИСЬ!")
+          alert(chare +" WIN!")
           window.location.reload();
-        } else if (position.indexOf("") == -1) {
-          alert();
-          window.location.reload();
-        }
+        } 
+    
   }); 
+
+
+
+  if (position.indexOf("") == -1) {
+    alert("DRAW");
+    window.location.reload();
+  }
+
+    check();
 
 
 }
